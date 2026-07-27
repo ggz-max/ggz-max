@@ -11,13 +11,13 @@
 ## `> now`
 
 ```yaml
-target:   AI 产品运营 / AI 产品
-building: KTV 轻产品矩阵 + AI Agent 驱动的运营系统
-thinking: 如何让 AI 从“能生成”走向“可交付、可控制、可复盘”
-method:   insight -> workflow -> human review -> data feedback
+target:     增长运营 / 用户增长 / 产品运营（数据驱动）
+experience: KTV 增值业务优化 +「欢乐歌房」0 -> 1 增长
+focus:      用户分层 / 付费转化 / 活跃留存 / 数据复盘
+method:     insight -> experiment -> measure -> iterate
 ```
 
-我把真实业务问题编译成产品和 AI 工作流。目前围绕数据决策、销售赋能、智能客服、内容增长与用户产品实验持续构建，并在寻找 **AI 产品运营** 方向的新机会。
+我关注用户从进入、活跃到付费的完整链路，用分层运营、数据分析和快速实验推动增长，也用 AI 把数据平台、客服与内容生产做成可持续的运营系统。
 
 ## `> live contribution stream`
 

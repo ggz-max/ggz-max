@@ -1,0 +1,87 @@
+name: Refresh recent activity
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/recent-activity.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recent-activity
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v6
+
+      - name: Build activity feed
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const profileRepo = `${owner}/${context.repo.repo}`.toLowerCase();
+            const { data: events } = await github.rest.activity.listPublicEventsForUser({
+              username: owner,
+              per_page: 60,
+            });
+
+            const link = (repo) => `[${repo}](https://github.com/${repo})`;
+            const render = (event) => {
+              const repo = event.repo.name;
+              if (repo.toLowerCase() === profileRepo) return null;
+              const payload = event.payload;
+
+              switch (event.type) {
+                case 'PushEvent':
+                  return `\`PUSH\` ${payload.size || 1} commit(s) -> ${link(repo)}`;
+                case 'CreateEvent':
+                  return payload.ref_type === 'repository'
+                    ? `\`CREATE\` repository ${link(repo)}`
+                    : `\`CREATE\` ${payload.ref_type} \`${payload.ref || ''}\` in ${link(repo)}`;
+                case 'PullRequestEvent':
+                  return `\`PR:${payload.action.toUpperCase()}\` [#${payload.number}](${payload.pull_request.html_url}) in ${link(repo)}`;
+                case 'IssuesEvent':
+                  return `\`ISSUE:${payload.action.toUpperCase()}\` [#${payload.issue.number}](${payload.issue.html_url}) in ${link(repo)}`;
+                case 'ReleaseEvent':
+                  return `\`RELEASE\` [${payload.release.tag_name}](${payload.release.html_url}) in ${link(repo)}`;
+                case 'WatchEvent':
+                  return `\`STAR\` ${link(repo)}`;
+                case 'ForkEvent':
+                  return `\`FORK\` ${link(repo)}`;
+                default:
+                  return null;
+              }
+            };
+
+            const lines = events.map(render).filter(Boolean).slice(0, 5);
+            const body = lines.length ? lines.map((line) => `- ${line}`).join('\n') : '_暂无可展示的公开活动。_';
+            const start = '<!-- ACTIVITY:START -->';
+            const end = '<!-- ACTIVITY:END -->';
+            const readme = fs.readFileSync('README.md', 'utf8');
+            const pattern = new RegExp(`${start}[\\s\\S]*?${end}`);
+            if (!pattern.test(readme)) throw new Error('Activity markers not found in README.md');
+            fs.writeFileSync('README.md', readme.replace(pattern, `${start}\n${body}\n${end}`));
+
+      - name: Commit changed feed
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "Activity feed is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: refresh recent activity"
+          git push

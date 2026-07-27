@@ -1,5 +1,15 @@
 <svg width="1000" height="300" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <style>
+      .flow { stroke-dasharray: 9 8; animation: dash 2.4s linear infinite; }
+      .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 1.8s ease-in-out infinite; }
+      .scan { animation: scan 4.5s ease-in-out infinite; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes dash { to { stroke-dashoffset: -34; } }
+      @keyframes pulse { 0%, 100% { opacity: .55; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.35); } }
+      @keyframes scan { 0% { transform: translateY(-18px); opacity: 0; } 15%, 85% { opacity: .22; } 100% { transform: translateY(245px); opacity: 0; } }
+      @keyframes blink { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+    </style>
     <linearGradient id="panel" x1="0" y1="0" x2="1000" y2="300" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0A0F1C"/>
       <stop offset="1" stop-color="#111827"/>
@@ -21,6 +31,7 @@
   <rect width="1000" height="300" rx="8" fill="url(#panel)"/>
   <rect x="1" y="1" width="998" height="298" rx="7" stroke="#334155" stroke-width="2"/>
   <rect x="1" y="42" width="998" height="257" fill="url(#grid)"/>
+  <rect class="scan" x="2" y="43" width="996" height="2" fill="#22D3EE" opacity="0"/>
   <path d="M1 42H999" stroke="#334155"/>
   <circle cx="24" cy="21" r="5" fill="#FB7185"/>
   <circle cx="43" cy="21" r="5" fill="#FBBF24"/>
@@ -28,9 +39,9 @@
   <text x="500" y="25" text-anchor="middle" fill="#64748B" font-family="Consolas, Menlo, monospace" font-size="12">ggz-max@github: ~/profile</text>
 
   <text x="72" y="85" fill="#22D3EE" font-family="Consolas, Menlo, monospace" font-size="15">$ whoami</text>
-  <text x="72" y="139" fill="#F8FAFC" font-family="Consolas, Menlo, monospace" font-size="42" font-weight="700">GGZ_MAX</text>
+  <text x="72" y="139" fill="#F8FAFC" font-family="Consolas, Menlo, monospace" font-size="42" font-weight="700">GGZ_MAX<tspan class="cursor" fill="#22D3EE">_</tspan></text>
   <text x="72" y="174" fill="#A3E635" font-family="Consolas, Menlo, monospace" font-size="20" filter="url(#glow)">AI PRODUCT OPERATIONS</text>
-  <rect x="72" y="197" width="856" height="2" rx="1" fill="url(#line)"/>
+  <rect class="flow" x="72" y="197" width="856" height="2" rx="1" fill="none" stroke="url(#line)" stroke-width="2"/>
 
   <text x="72" y="232" fill="#94A3B8" font-family="Consolas, Menlo, monospace" font-size="14">INSIGHT</text>
   <path d="M143 227H191" stroke="#475569" stroke-width="2"/><path d="M187 223L191 227L187 231" stroke="#475569" stroke-width="2"/>
@@ -41,7 +52,7 @@
   <text x="525" y="232" fill="#94A3B8" font-family="Consolas, Menlo, monospace" font-size="14">GROWTH LOOP</text>
 
   <rect x="72" y="255" width="138" height="24" rx="4" fill="#22D3EE" fill-opacity="0.1" stroke="#22D3EE" stroke-opacity="0.5"/>
-  <circle cx="87" cy="267" r="4" fill="#22D3EE" filter="url(#glow)"/>
+  <circle class="pulse" cx="87" cy="267" r="4" fill="#22D3EE" filter="url(#glow)"/>
   <text x="98" y="271" fill="#CFFAFE" font-family="Consolas, Menlo, monospace" font-size="12">OPEN TO WORK</text>
   <text x="928" y="271" text-anchor="end" fill="#64748B" font-family="Consolas, Menlo, monospace" font-size="12">BUILD / MEASURE / ITERATE</text>
 </svg>

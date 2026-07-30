@@ -65,9 +65,9 @@ method:     insight -> experiment -> measure -> iterate
 <!-- ACTIVITY:START -->
 - `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
 - `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `CREATE` branch `thunderbox-move-this-mic` in [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `CREATE` branch `thunderbox-mental-state-sign` in [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `CREATE` branch `main` in [ggz-max/yunying-team-demo](https://github.com/ggz-max/yunying-team-demo)
+- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
+- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
+- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
 <!-- ACTIVITY:END -->
 
 <sub>由 GitHub Actions 每 6 小时同步公开活动，自动忽略本主页仓库的更新。</sub>

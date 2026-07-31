@@ -63,11 +63,11 @@ method:     insight -> experiment -> measure -> iterate
 ## `> recent signals`
 
 <!-- ACTIVITY:START -->
-- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
-- `PUSH` 1 commit(s) -> [ggz-max/-ktv-h5-mini-games](https://github.com/ggz-max/-ktv-h5-mini-games)
+- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
+- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
+- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
+- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
+- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
 <!-- ACTIVITY:END -->
 
 <sub>由 GitHub Actions 每 6 小时同步公开活动，自动忽略本主页仓库的更新。</sub>

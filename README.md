@@ -63,11 +63,7 @@ method:     insight -> experiment -> measure -> iterate
 ## `> recent signals`
 
 <!-- ACTIVITY:START -->
-- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
-- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
-- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
-- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
-- `PUSH` 1 commit(s) -> [ggz-max/pay-Swagger](https://github.com/ggz-max/pay-Swagger)
+_暂无可展示的公开活动。_
 <!-- ACTIVITY:END -->
 
 <sub>由 GitHub Actions 每 6 小时同步公开活动，自动忽略本主页仓库的更新。</sub>
